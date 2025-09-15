@@ -1,0 +1,40 @@
+
+:root{
+  --elite-yellow:#FFD400;
+  --elite-black:#000000;
+  --elite-white:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0b0b0b;color:var(--elite-white)}
+a{color:var(--elite-yellow);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#000;border-bottom:2px solid var(--elite-yellow);position:sticky;top:0;z-index:10}
+.brand{display:flex;gap:12px;align-items:center}
+.brand img{height:52px;border:2px solid var(--elite-yellow);border-radius:6px;background:#000}
+.brand h1{margin:0;font-size:22px;letter-spacing:2px}
+.tag{display:inline-block;background:var(--elite-yellow);color:#000;padding:2px 8px;border-radius:4px;font-weight:800;margin-left:6px}
+.hero{background:linear-gradient(180deg, rgba(255,212,0,0.08), rgba(0,0,0,0.6)), url('assets/IMG_7866.JPG') center/cover no-repeat;min-height:58vh;display:flex;align-items:center;border-bottom:3px solid var(--elite-yellow)}
+.hero-inner{background:rgba(0,0,0,0.65);padding:28px;border:2px solid var(--elite-yellow);border-radius:16px;margin:32px;max-width:800px}
+.hero h2{margin:0 0 12px 0;font-size:44px;line-height:1.1;letter-spacing:1.5px}
+.hero p{margin:0 0 12px 0;font-size:18px;color:#eaeaea}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-block;padding:12px 18px;border:2px solid var(--elite-yellow);border-radius:999px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.btn.primary{background:var(--elite-yellow);color:#000}
+.btn.ghost{background:transparent;color:var(--elite-yellow)}
+.section{padding:40px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#0f0f0f;border:1px solid rgba(255,255,255,0.1);border-radius:14px;overflow:hidden}
+.card img{width:100%;height:220px;object-fit:cover;border-bottom:1px solid rgba(255,255,255,0.1)}
+.card .pad{padding:14px}
+.footer{padding:28px;text-align:center;color:#cfcfcf}
+.badge{padding:2px 8px;border-radius:999px;border:1px solid var(--elite-yellow);color:var(--elite-yellow);font-size:12px;font-weight:700;letter-spacing:1px}
+.table{width:100%;border-collapse:collapse;margin-top:14px}
+.table th,.table td{border:1px solid rgba(255,255,255,0.15);padding:10px;text-align:left}
+.kit{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.kit span{border:1px dashed rgba(255,255,255,0.4);padding:6px 10px;border-radius:8px}
+.notice{font-size:13px;color:#bdbdbd;margin-top:6px}
+@media (max-width:520px){
+  .hero h2{font-size:32px}
+  .brand h1{display:none}
+}

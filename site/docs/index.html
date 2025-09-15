@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TEAM EL1TE Wrestling</title>
+  <meta name="description" content="Official site for TEAM EL1TE Wrestling — youth club in the western suburbs. Let it fly."/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml"/>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="TEAM EL1TE logo"/>
+      <h1>TEAM EL1TE <span class="tag">WRESTLING</span></h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>&nbsp;&nbsp;
+      <a href="#schedule">Schedule</a>&nbsp;&nbsp;
+      <a href="#coaches">Coaches</a>&nbsp;&nbsp;
+      <a href="#register" class="btn primary">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Built for this. Still becoming.</h2>
+      <p>Hard work, discipline, and teammates who push you to be your best. Join TEAM EL1TE Wrestling.</p>
+      <div class="cta">
+        <!-- TODO: Replace the # links below -->
+        <a class="btn primary" href="#register" id="register-now">Register Now</a>
+        <a class="btn ghost" href="#pay" id="pay-now">Pay Dues</a>
+      </div>
+      <p class="notice">Colors: Black • Yellow • White — “EL1TE” uses a numeral 1.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about" class="section">
+      <h3>About the Club</h3>
+      <p>TEAM EL1TE is a family-first youth wrestling club focused on fundamentals, grit, and a growth mindset. We welcome beginners and advanced wrestlers in K–8.</p>
+      <div class="kit">
+        <span>#LetItFly</span>
+        <span>Folkstyle • Freestyle • Greco</span>
+        <span>Western Suburbs, IL</span>
+      </div>
+    </section>
+
+    <section id="register" class="section">
+      <h3>Register</h3>
+      <p>Complete the Google Form, then send payment. Your spot is confirmed when both steps are complete.</p>
+      <div class="cta">
+        <!-- Replace with your real Google Form URL -->
+        <a class="btn primary" target="_blank" rel="noopener" href="https://forms.gle/REPLACE_ME">Google Form</a>
+        <!-- Replace with your real Venmo/Zelle links -->
+        <a class="btn ghost" target="_blank" rel="noopener" href="https://account.venmo.com/u/REPLACE_ME">Pay with Venmo</a>
+        <a class="btn ghost" target="_blank" rel="noopener" href="mailto:your-zelle-email@example.com?subject=TEAM%20EL1TE%20Dues&body=Please%20send%20Zelle%20payment%20to%20this%20address.">Pay with Zelle</a>
+      </div>
+      <p class="notice">Tip: After you publish your Google Form, click “Send” → link icon and paste it here.</p>
+    </section>
+
+    <section id="schedule" class="section">
+      <h3>Practice Schedule</h3>
+      <table class="table">
+        <thead><tr><th>Day</th><th>Time</th><th>Location</th></tr></thead>
+        <tbody>
+          <tr><td>Mon/Wed</td><td>6:00–7:30 PM</td><td>Your Room Name</td></tr>
+          <tr><td>Sat (Open Mat)</td><td>10:00–11:30 AM</td><td>Your Room Name</td></tr>
+        </tbody>
+      </table>
+      <p class="notice">Update these details anytime in <code>index.html</code>.</p>
+    </section>
+
+    <section id="coaches" class="section">
+      <h3>Coaches</h3>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/IMG_8626.JPG" alt="Team huddle"/>
+          <div class="pad">
+            <strong>Coach Nick</strong>
+            <p>Head Coach — Western suburbs wrestling dad energy. Focus on fundamentals, pace, and mat IQ.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/IMG_8629.JPG" alt="Coaching corner"/>
+          <div class="pad">
+            <strong>Coach Staff</strong>
+            <p>Former wrestlers and current parents who care — building strong kids through the sport.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/IMG_8635.JPG" alt="Team circle"/>
+          <div class="pad">
+            <strong>Community</strong>
+            <p>Hard rounds, good vibes. We compete, we learn, and we cheer for each other.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.svg" alt="logo" style="height:36px;vertical-align:middle;border:1px solid var(--elite-yellow);border-radius:6px;margin-right:8px"/>
+    <span>&copy; <span id="year"></span> TEAM EL1TE Wrestling • All rights reserved.</span>
+    <div class="notice">Questions? <a href="mailto:info@example.com">info@example.com</a></div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
