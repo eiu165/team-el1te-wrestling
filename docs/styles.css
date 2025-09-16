@@ -11,7 +11,7 @@ a:hover{text-decoration:underline}
 .container{max-width:1100px;margin:0 auto;padding:24px}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#000;border-bottom:2px solid var(--elite-yellow);position:sticky;top:0;z-index:10}
 .brand{display:flex;gap:12px;align-items:center}
-.brand img{height:52px;border:2px solid var(--elite-yellow);border-radius:6px;background:#000}
+.brand img{height:52px;border:2px solid var(--elite-black);border-radius:6px;background:#000}
 .brand h1{margin:0;font-size:22px;letter-spacing:2px}
 .tag{display:inline-block;background:var(--elite-yellow);color:#000;padding:2px 8px;border-radius:4px;font-weight:800;margin-left:6px}
 .hero{background:linear-gradient(180deg, rgba(255,212,0,0.08), rgba(0,0,0,0.6)), url('assets/IMG_7866.JPG') center/cover no-repeat;min-height:58vh;display:flex;align-items:center;border-bottom:3px solid var(--elite-yellow)}
