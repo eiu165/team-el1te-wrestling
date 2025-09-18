@@ -12,15 +12,19 @@
   <header class="nav">
     <div class="brand">
       <img src="assets/team-elite-wrestling.jpg" alt="TEAM EL1TE crest"/>
-       
+
     </div>
-    <nav>
-      <a href="#about">About</a>&nbsp;&nbsp;
-      <a href="#schedule">Schedule</a>&nbsp;&nbsp;
-      <a href="#gear">Gear</a>&nbsp;&nbsp;
-      <a href="#coaches">Coaches</a>&nbsp;&nbsp;
-      <a href="#register" class="btn primary">Register</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <nav id="site-navigation" class="navigation" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#gear">Gear</a>
+      <a href="#coaches">Coaches</a>
     </nav>
+    <a href="#register" class="btn primary register-link">Register</a>
   </header>
 
   <section class="hero">
@@ -205,6 +209,32 @@
       var yearEl = document.getElementById('year');
       if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
+      }
+
+      var menuToggle = document.querySelector('.menu-toggle');
+      var navigation = document.getElementById('site-navigation');
+      if (menuToggle && navigation) {
+        navigation.classList.add('menu-ready');
+        var closeMenu = function () {
+          navigation.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        menuToggle.addEventListener('click', function () {
+          var isOpen = navigation.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        var navLinks = navigation.querySelectorAll('a');
+        for (var i = 0; i < navLinks.length; i++) {
+          navLinks[i].addEventListener('click', closeMenu);
+        }
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 768) {
+            closeMenu();
+          }
+        });
       }
 
       var venmoLink = document.getElementById('venmo-link');
