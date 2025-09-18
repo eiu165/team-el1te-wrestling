@@ -39,6 +39,8 @@ a:hover{text-decoration:underline}
 .social-link:focus-visible{outline:2px solid var(--elite-white);outline-offset:2px;text-decoration:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .notice{font-size:13px;color:#bdbdbd;margin-top:6px}
+.feature-list{margin:16px 0;padding-left:20px;line-height:1.6;color:#e0e0e0}
+.feature-list li{margin-bottom:6px}
 @media (max-width:520px){
   .hero h2{font-size:32px}
   .brand h1{display:none}
