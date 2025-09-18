@@ -78,7 +78,16 @@
         <!-- Replace with your real Google Form URL -->
         <a class="btn primary" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLScHnGLNLdHIXoey1_qvB6NlAg89tmwJYVDbOGAyd5Fexs1HOQ/viewform?usp=header">Registration Form</a>
         <!-- Replace with your real Venmo/Zelle links -->
-        <a class="btn ghost" target="_blank" rel="noopener" href="https://account.venmo.com/u/usf1ten">Pay with Venmo $?</a>
+        <a
+          id="venmo-link"
+          class="btn ghost"
+          target="_blank"
+          rel="noopener"
+          href="https://account.venmo.com/u/usf1ten"
+          data-app-url="venmo://paycharge?txn=pay&recipients=usf1ten"
+        >
+          Pay with Venmo @usf1ten
+        </a>
         <a class="btn ghost" target="_blank" rel="noopener" href="mailto:your-zelle-email@example.com?subject=TEAM%20EL1TE%20Dues&body=Please%20send%20Zelle%20payment%20to%20this%20address.">Pay with Zelle $?</a>
       </div>
       <p class="notice"> </p>
@@ -171,7 +180,48 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      var yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      var venmoLink = document.getElementById('venmo-link');
+      if (!venmoLink) {
+        return;
+      }
+
+      var venmoAppUrl = venmoLink.getAttribute('data-app-url');
+      if (!venmoAppUrl) {
+        return;
+      }
+
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (!isMobile) {
+        return;
+      }
+
+      var fallbackUrl = venmoLink.getAttribute('href');
+
+      venmoLink.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        var fallbackTimer = setTimeout(function () {
+          window.location.href = fallbackUrl;
+        }, 1200);
+
+        var cancelFallback = function () {
+          if (document.hidden) {
+            clearTimeout(fallbackTimer);
+            document.removeEventListener('visibilitychange', cancelFallback);
+          }
+        };
+
+        document.addEventListener('visibilitychange', cancelFallback);
+
+        window.location.href = venmoAppUrl;
+      });
+    })();
   </script>
 </body>
 </html>
