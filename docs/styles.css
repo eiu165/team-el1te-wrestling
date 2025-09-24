@@ -53,7 +53,8 @@ a:hover{text-decoration:underline}
 .badge{padding:2px 8px;border-radius:999px;border:1px solid var(--elite-yellow);color:var(--elite-yellow);font-size:12px;font-weight:700;letter-spacing:1px}
 .table{width:100%;border-collapse:collapse;margin-top:14px}
 .table th,.table td{border:1px solid rgba(255,255,255,0.15);padding:10px;text-align:left}
-.practice-table td:nth-child(4){min-width:140px}
+.practice-table td:nth-child(6){min-width:140px}
+.schedule-key{margin-top:8px;margin-bottom:12px;color:#e0e0e0}
 .schedule-note{font-style:italic;margin-top:4px}
 .kit{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
 .kit span{border:1px dashed rgba(255,255,255,0.4);padding:6px 10px;border-radius:8px}
