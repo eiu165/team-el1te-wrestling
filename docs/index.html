@@ -21,8 +21,9 @@
     <nav id="site-navigation" class="navigation" aria-label="Primary">
       <a href="#key-dates">Key Dates</a>
       <a href="#schedule">Schedule</a>
+      <a href="#gear">Gear</a>
       <a href="#about">About</a>
-      <a href="#register">Register</a> 
+      <a href="#register">Register</a>
     </nav>
     <a href="#register" class="btn primary register-link">Register</a>
   </header>
@@ -230,24 +231,36 @@ zelle, venmo or check </p>
 
 
 
-    <section id="gear" class="section" style="display:none">
-      <h3>Gear</h3>
-      <p>Rep the squad on and off the mat. Use the form below to order shorts, T-shirts, sweatshirts, sweatpants, and singlets.</p>
-      <ul class="feature-list">
-        <li>High-quality materials ready for hard rounds and travel days.</li>
-        <li>Youth and adult sizes available for most items.</li>
-        <li>Bulk orders coordinated through TEAM EL1TE staff.</li>
-      </ul>
-      <div class="cta">
-        <!-- Replace with your real gear-order Google Form URL -->
-        <a
-          class="btn primary"
-          target="_blank"
-          rel="noopener"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScnjdXXV68Ymn8GRBDuDRaj_BbVdYFYooPi3ItkELDKQgza-Q/viewform"
-        >Order Gear</a>
+    <section id="gear" class="section">
+      <h3>Gear &amp; Apparel</h3>
+      <div class="gear-grid">
+        <div class="gear-copy">
+          <p>Rep TEAM EL1TE on the podium, in the stands, and around town with fresh drops from our online store.</p>
+          <ul class="feature-list">
+            <li>Heathered tees, hoodies, and more printed on-demand.</li>
+            <li>Youth and adult sizes available while the campaign is live.</li>
+            <li>Ships straight to your door—no pickup needed.</li>
+          </ul>
+          <div class="cta">
+            <a
+              class="btn primary"
+              target="_blank"
+              rel="noopener"
+              href="https://team-el1te.checkoutstores.com/campaigns/team-el1te"
+            >Shop the Online Store</a>
+          </div>
+        </div>
+        <div class="gear-media">
+          <img
+            id="gear-shirt"
+            alt="Heather gray TEAM EL1TE Wrestling T-shirt"
+            loading="lazy"
+            decoding="async"
+            width="525"
+            height="787"
+          />
+        </div>
       </div>
-      <p class="notice">Questions about sizing or availability?  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9sr_jhIGkuZtM71L4XRduLC6nNzahzcpfISuzS7Bp8BkLJg/viewform?usp=header">Submit them here</a> and a coach will follow up.</p>
     </section>
 
  
@@ -260,6 +273,7 @@ zelle, venmo or check </p>
     <div class="notice">Questions? <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9sr_jhIGkuZtM71L4XRduLC6nNzahzcpfISuzS7Bp8BkLJg/viewform?usp=header">Submit them here</a></div>
   </footer>
 
+  <script src="assets/gear-shirt-data.js"></script>
   <script>
     (function () {
       var yearEl = document.getElementById('year');
@@ -291,6 +305,23 @@ zelle, venmo or check </p>
             closeMenu();
           }
         });
+      }
+
+      var gearShirtImage = document.getElementById('gear-shirt');
+      if (gearShirtImage) {
+        var gearShirtDataUri = typeof window !== 'undefined' ? window.__gearShirtDataUri : null;
+        if (gearShirtDataUri) {
+          gearShirtImage.src = gearShirtDataUri;
+          if (gearShirtImage.classList) {
+            gearShirtImage.classList.add('is-loaded');
+          }
+
+          try {
+            delete window.__gearShirtDataUri;
+          } catch (error) {
+            window.__gearShirtDataUri = null;
+          }
+        }
       }
 
       var venmoLink = document.getElementById('venmo-link');
